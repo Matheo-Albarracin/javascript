@@ -1,14 +1,11 @@
-const Metodopago= "Cripto"
+let entrada = prompt("Ingrese un texto o ESC para interrumpir")
 
-switch (Metodopago){
-    case "Efectivo":
-    console.log("Pagaste en efectivo")
-    break;
-    case "Cheque":
-    console.log("Pagaste con un cheque");
-    brack;
-    case "Cripto":
-    console.log("Pagaste con cripto")
-    default:
-        console.log("Metodo de pago no aceptado")
-        break;}
+let texto = "texto";
+
+while (entrada != "ESC" && entrada != "esc"){
+    texto + entrada + " "
+    entrada = prompt("Ingrese un texto o ESC para interrumpir");
+    if (texto === ESC){
+        continue
+    }
+}
