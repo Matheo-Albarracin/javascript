@@ -13,9 +13,6 @@
     background-color: gray;
 }
 
-.cart{
-    width: 80%;
-    margin: auto;
-    padding: 20px;
-    background: white;
+#carrito{
+    background-color: aqua;
 }
