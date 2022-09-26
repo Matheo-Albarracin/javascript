@@ -68,23 +68,54 @@ const recorrerProductos = ()=> {
             })
             const totalContainer = document.createElement("div");
             totalContainer.className="total-carrito";
-            totalContainer.innerHTML= `<div class= "total"> TOTAL $ ${total}</div>
-            <button class= "btn btn-info finaliar" id="finalizar" onClick="finalizarCompra()">
+            totalContainer.innerHTML= `<div class = "total"> TOTAL $ ${total}</div>
+            <button class= "btn btn-info  finalizar" id="finalizar" onClick="finalizarCompra()"> FINALIZAR COMPRA </button>
+            </div>
             `
-            modalCarrito.appendChild(total-carrito)
+            modalCarrito.appendChild(totalContainer)
         }else {
             modalCarrito.classList.remove("carrito")
         }
     }
 
-    const removeProduct= (indice) => {
-        carrito.splice(indice,1);
+    const removeProduct = (indice) => {
+        carrito.splice(indice, 1);
         dibujarCarrito();
+
     };
     const finalizarCompra = () => {
         const total = document.getElementsByClassName("total")[0].innerHTML;
         modalCarrito.innerHTML = "";
-        const compraFinalizada = `<div class="compra-finalizada"><p class="compra-parrafo"> LA COMPRA HA FINALIZADO, EL TOTAL ES ${total} </div>
+        const compraFinalizada = `<div class="compra-finalizada"><p class="compra-parrafo"> YA CASI ES TUYA LA COMPRA!! <div>
+        <div class = "datos-clientes">
+        <p class = "datos-parrafo"> Complete el formulario con sus datos para destinar sus datos</p>
+        <button class = "btn btn-info formulario" "id = formulario" onClick="DibujarFormu()"> FORMULARIO </button>
+        </div>
         `
         modalCarrito.innerHTML = compraFinalizada
     }
+
+    const DibujarFormu = () => {
+        modalCarrito.innerHTML = "";
+        const formulario = `
+    <section class="form-register">
+    <h4>Formulario Registro</h4>
+    <input class="controls" type="text" name="nombres" id="nombre" placeholder="Ingrese su Nombre">
+    <input class="controls" type="text" name="apellidos" id="apellido" placeholder="Ingrese su Apellido">
+    <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo">
+    <input class="controls" type="password" name="correo" id="domicilio" placeholder="Ingrese su Domicilio">
+    <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
+    <input class="botons" type="submit" value="Registrar">
+    <p><a href="#">¿Ya tengo Cuenta?</a></p>
+    </section>`;
+        modalCarrito.innerHTML = formulario;
+}
+
+const mostrarMensaje = () => {
+    const nombreCliente = document.getElementById("nombre").value;
+    const domicilioCliente = document.getElementById("domiciolio").value
+    modalCarrito.innerHTML = "";
+    let mensaje = `<div class = "mensaje-final">Gracias ${nombreCliente} por su compra y registro, en un lapzo de 72 horas recibira su compra!!
+    </div>`
+    modalCarrito.innerHTML = mensaje;
+}
