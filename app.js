@@ -19,7 +19,7 @@ const recorrerProductos = ()=> {
         <h5 class="card-title">"${producto.nombre}"</h5>
         <div class="card-body">
         <p class="card-text">"${producto.precio}"</p>
-        <a href="#" class="btn btn-primary" onClick="agregarAlCarrito(${indice})">Comprar</a>
+        <a href="#" class="btn btn-primary" id = "boton" onClick="agregarAlCarrito(${indice})">Comprar</a>
         </div>`;
         contenedor.appendChild(card)
         })
@@ -78,6 +78,7 @@ const recorrerProductos = ()=> {
         }
     }
 
+
     const removeProduct = (indice) => {
         carrito.splice(indice, 1);
         dibujarCarrito();
@@ -89,7 +90,7 @@ const recorrerProductos = ()=> {
         const compraFinalizada = `<div class="compra-finalizada"><p class="compra-parrafo"> YA CASI ES TUYA LA COMPRA!! <div>
         <div class = "datos-clientes">
         <p class = "datos-parrafo"> Complete el formulario con sus datos para destinar sus datos</p>
-        <button class = "btn btn-info formulario" "id = formulario" onClick="DibujarFormu()"> FORMULARIO </button>
+        <button class = "btn btn-info formulario" id = "formulario" onClick="DibujarFormu()"> FORMULARIO </button>
         </div>
         `
         modalCarrito.innerHTML = compraFinalizada
@@ -118,4 +119,4 @@ const mostrarMensaje = () => {
     let mensaje = `<div class = "mensaje-final">Gracias ${nombreCliente} por su compra y registro, en un lapzo de 72 horas recibira su compra!!
     </div>`
     modalCarrito.innerHTML = mensaje;
-}
+} 
