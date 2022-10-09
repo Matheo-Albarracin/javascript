@@ -1,8 +1,10 @@
+let productos = ["./data.json"]
+
 const recorrerProductos = ()=> {
     let contenedor = document.getElementById("container")
-    fetch("/data.json")
+    fetch("./data.json")
     .then((res)=>res.json())
-    .then((productos)=>{
+    .then((productos)=>{        
     productos.forEach((producto,indice)=>{
         let card = document.createElement("div")
         card.classList.add("card", "col-sm-8", "col-lg-3",);
@@ -47,9 +49,9 @@ const recorrerProductos = ()=> {
                 const carritoContainer = document.createElement("div")
                 carritoContainer.className = "producto-carrito"
                 carritoContainer.innerHTML = `
-                <img class = "car-img" src="${producto.img}"/>
+                <img class = "car-img" src="${producto.imagen}"/>
                 <div class="product-details">
-                ${producto.nombre}
+                ${producto.tag}
                 </div>
                 <div class="product-details"> Cantidad: ${producto.cantidad}</div>
                 <div class="product-details"> Precio: ${producto.precio}</div>
