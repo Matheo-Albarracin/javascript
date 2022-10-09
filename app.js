@@ -23,6 +23,9 @@ const recorrerProductos = ()=> {
     let carrito = [];
 
     const agregarAlCarrito = (indice) => {
+        fetch("./data.json")
+        .then((res)=>res.json())
+        .then((productos)=>{
         const indiceEncontradoCarrito = carrito.findIndex((elemento) =>{
             return elemento.id === productos[indice].id
         })
@@ -35,6 +38,7 @@ const recorrerProductos = ()=> {
             carrito[indiceEncontradoCarrito].cantidad +=1;
             dibujarCarrito()
         }
+    })
     };
 
     const modalCarrito = document.querySelector('#carrito')
